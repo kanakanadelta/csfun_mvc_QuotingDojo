@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace QuotingDojo.Controllers
@@ -7,6 +8,8 @@ namespace QuotingDojo.Controllers
         [HttpGet("")]
         public IActionResult Index()
         {
+            List<Dictionary<string, object>> AllQuotes = DbConnector.Query("SELECT * FROM quotes");
+            ViewBag.Quotes = AllQuotes;
             return View();
         }
     }
