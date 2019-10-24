@@ -5,6 +5,8 @@ namespace QuotingDojo.Models
 {
     public class Quote
     {
+        public int QuoteId {get; set;}
+
         [Required]
         [MinLength(2)]
         [MaxLength(30)]
@@ -17,8 +19,10 @@ namespace QuotingDojo.Models
         [Display(Name = "Your Quote:")]
         public string Comment{get;set;}
 
-        public string DisplayDate {get; set;}
-        public DateTime DateValue {get; set;}
+        public string Date {get; set;}
+        
+        public DateTime CreatedAt {get; set;}
+
 
     }
 }

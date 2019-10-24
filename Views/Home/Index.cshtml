@@ -1,3 +1,5 @@
+@using QuotingDojo.Models
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,29 +10,34 @@
 </head>
 <body>
   <h1>Welcome to QuotingDojo</h1>
-  <form action="">
+  @model Quote
+  <form asp-action="Create" asp-controller="Home" method="POST">
       <table>
         <tbody>
           <tr>
             <td>
               <!-- label for "your name" -->
+              <label asp-for="Name"></label>
             </td>
             <td>
               <!-- input -->
+              <input asp-for="Name" type="text">
             </td>
           </tr>
           <tr>
             <td>
               <!-- label for your quote -->
+              <label asp-for="Comment"></label>
             </td>
             <td>
               <!-- textarea -->
+              <textarea asp-for="Comment" name="Comment" id="" cols="30" rows="10"></textarea>
             </td>
           </tr>
         </tbody>
       </table>
       <div>
-        <input type="submit" value="">
+        <input type="submit" value="Submit">
         <button>Skip to quotes</button>
       </div>
   </form>
